@@ -20,9 +20,25 @@ namespace _3WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Style[ ] Styles;
+        private uint CurrentStyle = 0;
+
         public MainWindow()
         {
             InitializeComponent();
+            string[ ] stylesName = new string[ ] {
+                "Style1",
+                "Style2",
+            };
+            Styles = new Style[stylesName.Length];
+            for (uint i = 0; i < stylesName.Length; i++) {
+                Styles[i] = Resources[stylesName[i]] as Style;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            CurrentStyle = (uint)((CurrentStyle + 1) % Styles.Length);
+            (sender as Button).Style = Styles[CurrentStyle];
         }
     }
 }
