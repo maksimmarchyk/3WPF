@@ -10,8 +10,19 @@
             <Setter Property="Control.Padding" Value="5"></Setter>
             <Setter Property="Control.Margin" Value="5"></Setter>
         </Style>
+        <Style x:Key="Style2">
+            <Setter Property="Control.FontFamily" Value="Times New Roman"></Setter>
+            <Setter Property="Control.FontSize" Value="24"></Setter>
+            <Setter Property="Control.Padding" Value="10"></Setter>
+            <Setter Property="Control.Margin" Value="10"></Setter>
+        </Style>
     </Window.Resources>
     <Grid>
-        <Button Style="{StaticResource Style1}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource Style1}">Стиль 1</Button>
+        <Button Style="{StaticResource Style2}" Grid.Column="1">Стиль 2</Button>
     </Grid>
 </Window>
