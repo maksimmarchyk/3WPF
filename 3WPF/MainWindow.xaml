@@ -2,7 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="Style1">
+            <Setter Property="Control.FontFamily" Value="Calibri"></Setter>
+            <Setter Property="Control.FontSize" Value="18"></Setter>
+            <Setter Property="Control.FontWeight" Value="Bold"></Setter>
+            <Setter Property="Control.Padding" Value="5"></Setter>
+            <Setter Property="Control.Margin" Value="5"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Button Style="{StaticResource Style1}"/>
     </Grid>
 </Window>
